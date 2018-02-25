@@ -46,7 +46,7 @@ In facts.Watchers forum is production ready!!!.
     Copy all project files to a web accessible folder.
 
     ### DATABASE CONFIGURATION (STEP 3)
-    Configure the db setting. It's located at /fuel/application/config/database.php
+    Configure the db setting. It's located at application/config/database.php
     You change the 
 
 	    'hostname' => 'localhost',
@@ -55,6 +55,9 @@ In facts.Watchers forum is production ready!!!.
 	    'database' => 'van_hack_greenDevNG_db',
 
     to match your own database and database user configuration.
+
+    #BASE URL (STEP 4)
+    Configure the base url at /application/config/config.php.
 ___
 
 __Developed by Bernard Dublin-Green (greendublin007@gmail.com)
