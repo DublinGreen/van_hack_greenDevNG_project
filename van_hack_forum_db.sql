@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 25, 2018 at 11:54 
+-- Generation Time: Mar 16, 2018 at 01:44 
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `van_categories` (
   `status` enum('ACTIVE','NOT ACTIVE') NOT NULL DEFAULT 'NOT ACTIVE',
   `name` char(250) NOT NULL,
   `time_added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `van_categories`
@@ -40,7 +40,9 @@ CREATE TABLE IF NOT EXISTS `van_categories` (
 INSERT INTO `van_categories` (`id`, `status`, `name`, `time_added`) VALUES
 (1, 'ACTIVE', 'JAVA', '2018-02-23 01:19:25'),
 (2, 'ACTIVE', 'PHP', '2018-02-23 01:19:25'),
-(3, 'ACTIVE', 'JQUERY', '2018-02-23 01:19:32');
+(3, 'ACTIVE', 'JQUERY', '2018-02-23 01:19:32'),
+(4, 'ACTIVE', 'CSS', '2018-03-14 16:22:27'),
+(5, 'ACTIVE', 'HTML', '2018-03-14 16:22:57');
 
 -- --------------------------------------------------------
 
@@ -83,16 +85,21 @@ CREATE TABLE IF NOT EXISTS `van_posts` (
   `title` char(250) NOT NULL,
   `content` char(250) NOT NULL,
   `time_added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `van_posts`
 --
 
 INSERT INTO `van_posts` (`id`, `user_id`, `category`, `title`, `content`, `time_added`) VALUES
-(1, 2, 'PHP', 'PHP ob_start()', 'Can someone please explain how ob_start() works in PHP', '2018-02-23 01:36:32'),
+(1, 1, 'PHP', 'PHP ob_start()', 'Can someone please explain how ob_start() works in PHP', '2018-02-23 01:36:32'),
 (2, 2, 'JAVA', 'InputStream for file downloding', 'Hello guys, how do i download a file in JAVA. Thanks in advance.', '2018-02-23 10:53:53'),
-(3, 0, 'PHP', 'VanHack', 'Oh yeah. Done. This project was fun....', '2018-02-25 22:37:08');
+(3, 2, 'PHP', 'VanHack', 'Oh yeah. Done. This project was fun....', '2018-02-25 22:37:08'),
+(4, 2, 'HTML', 'HTML VIDEO', 'How do i add a video to my webpage. Thanks guyz', '2018-03-14 16:10:34'),
+(5, 2, 'CSS', 'BORDER RADIUS', 'How to do border radius with CSS', '2018-03-14 16:12:28'),
+(6, 2, 'CSS', 'CSS OPACITY', 'How to add opacity in CSS.', '2018-03-14 16:15:28'),
+(7, 2, 'CSS', 'UNIT IN CSS', 'Best unit for layout', '2018-03-14 16:22:27'),
+(8, 2, 'HTML', 'HTML AUDIO', 'How to play music HTML...', '2018-03-14 16:22:57');
 
 -- --------------------------------------------------------
 
@@ -335,7 +342,7 @@ ALTER TABLE `van_users`
 -- AUTO_INCREMENT for table `van_categories`
 --
 ALTER TABLE `van_categories`
-MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `van_comments`
 --
@@ -345,7 +352,7 @@ MODIFY `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 -- AUTO_INCREMENT for table `van_posts`
 --
 ALTER TABLE `van_posts`
-MODIFY `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `van_survey`
 --
