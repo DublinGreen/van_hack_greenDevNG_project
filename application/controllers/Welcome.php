@@ -437,13 +437,20 @@
 				$category = $this->input->post_get('category', TRUE);
 				$content = $this->input->post_get('content', TRUE);
 				
+				$insertDataCategory = array(
+				   'status' => 'ACTIVE',
+				   'name' => $category
+				);
+				$this->db->insert('categories', $insertDataCategory); 
+				
 				$insertData = array(
 				   'title' => $title,
 				   'content' => $content,
-				   'category' => $category
+				   'category' => $category,
+				   'user_id' => $this->session->userdata('id')
 				);
 				$this->db->insert('posts', $insertData); 
-
+				
 				$data['message'] = '<div class="alert alert-success alert-dismissible fade in" role="alert">
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 					X</button>Topic has been posted. Thank you.</div>';
@@ -560,11 +567,6 @@
 			$data['title'] = "Seach {$this->appName}";
 			$data['warning'] = "";
 			$data['message'] = "";
-			
-			$logged_in = $this->__authUser();
-			if (!$logged_in) {
-				redirect('welcome', 'To home page ', 307);
-			}
 			
 			$data['social_facebook'] = $this->socialFacebook;
 			$data['social_twitter'] = $this->socialTwitter;

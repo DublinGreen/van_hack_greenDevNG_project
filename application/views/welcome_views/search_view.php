@@ -56,7 +56,7 @@
 													?>	
 														<div class="alert alert-warning">
 																<img class="img img-responsive pull-left" src="<?php echo(base_url() . "public_assets/image/eyes_gif.gif"); ?>" alt="eye image"/>
-																<h3 class="pull-left text-muted">&nbsp;&nbsp; So sorry, we got about under  <?php echo $searchTerm; ?></h3>
+																<h3 class="pull-left text-muted">&nbsp;&nbsp; So sorry, we got noting under  <?php echo $searchTerm; ?></h3>
 																<div class="clearfix"></div>
 														</div>
 											<?php
